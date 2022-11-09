@@ -11,13 +11,27 @@
 
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-
+    
+  
   </head>
 
   <body>
-    <main class="container"></main>
+    <main class="container">
+      <nav>
+  <ul>
+    <li><h1><strong>Noticias Buenas></strong></h1></li>
+  </ul>
+  <ul>
+    <li><%= link_to 'Inicio', pages_index_path %></li>
+    <li><%= link_to 'Formulario', root_path %></li>
     
-    <%= yield %>
+  </ul>
+</nav>
+
+      <%= yield %>
+        
+      </main>
+    
+    
   </body>
 </html>
