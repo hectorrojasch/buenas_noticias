@@ -15,11 +15,14 @@ class FormulariosController < ApplicationController
     @formulario = Formulario.new
   end
 
+=begin
   # GET /formularios/1/edit
   def edit
   end
 
   # POST /formularios or /formularios.json
+
+=end  
   def create
     @formulario = Formulario.new(formulario_params)
 
@@ -35,6 +38,11 @@ class FormulariosController < ApplicationController
   end
 
   # PATCH/PUT /formularios/1 or /formularios/1.json
+=begin
+  
+rescue StandardError => e
+  
+end   
   def update
     respond_to do |format|
       if @formulario.update(formulario_params)
@@ -47,6 +55,7 @@ class FormulariosController < ApplicationController
     end
   end
 
+
   # DELETE /formularios/1 or /formularios/1.json
   def destroy
     @formulario.destroy
@@ -56,7 +65,8 @@ class FormulariosController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+=end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_formulario
