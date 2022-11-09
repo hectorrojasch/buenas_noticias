@@ -2,6 +2,8 @@
 
 <h1>Formularios</h1>
 
+<%= link_to "New formulario", new_formulario_path %>
+
 <div id="formularios">
   <% @formularios.each do |formulario| %>
     <%= render formulario %>
@@ -11,4 +13,4 @@
   <% end %>
 </div>
 
-<%= link_to "New formulario", new_formulario_path %>
+
