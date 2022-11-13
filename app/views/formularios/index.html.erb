@@ -4,11 +4,13 @@
 
 <%= link_to "New formulario", new_formulario_path %>
 
+<br><hr style="border-top: 1px solid black;">
+
 <div id="formularios">
-  <% @formularios.each do |formulario| %>
-    <%= render formulario %>
+  <% @formularios.each do |f| %>
+    <%= render f %>
     <p>
-      <%= link_to "Show this formulario", formulario %>
+      <%= link_to "Show this formulario", f %>
     </p>
   <% end %>
 </div>
