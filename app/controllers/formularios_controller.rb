@@ -4,6 +4,9 @@ class FormulariosController < ApplicationController
   # GET /formularios or /formularios.json
   def index
     @formularios = Formulario.all
+    if params[:q] && params[:q] != ""
+      @formularios = Formulario.where("encabezado LIKE ?", "%" + params[:q] + "%")
+    end
   end
 
   # GET /formularios/1 or /formularios/1.json
