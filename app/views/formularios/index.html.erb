@@ -6,17 +6,23 @@
 
 <br><hr style="border-top: 1px solid black;">
 
- 
 
-  <%= form_tag "", method: "GET" do %>
-  
-  <%= text_field_tag :q, params[:q] %>
-  
-  <%= submit_tag "Buscar" %>
-<% end %>
+<%= render 'formularios/search_form' %>
 
- <h2>Busqueda</h2>
 
- <%= render @formularios %>
+
+
+<br><hr style="border-top: 1px solid black;">
+
+
+<div id="formularios">
+  <% @formularios.each do |f| %>
+    <%= render f %>
+    <p>
+      <%= link_to "Show this formulario", f %>
+    </p>
+  <% end %>
+</div>
+
 
 
