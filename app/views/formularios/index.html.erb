@@ -6,6 +6,7 @@
 
 <br><hr style="border-top: 1px solid black;">
 
+<<<<<<< HEAD
  
 
   <%= form_tag "", method: "GET" do %>
@@ -18,5 +19,23 @@
  <h2>Busqueda</h2>
 
  <%= render @formularios %>
+=======
+<%= render 'formularios/search_form' %>
+
+
+
+
+<br><hr style="border-top: 1px solid black;">
+
+
+<div id="formularios">
+  <% @formularios.each do |f| %>
+    <%= render f %>
+    <p>
+      <%= link_to "Show this formulario", f %>
+    </p>
+  <% end %>
+</div>
+>>>>>>> abpro4a
 
 

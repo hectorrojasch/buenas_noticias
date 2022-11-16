@@ -1,13 +1,25 @@
 class FormulariosController < ApplicationController
   before_action :set_formulario, only: %i[ show edit update destroy ]
 
+ 
+def index
+  @q = Formulario.ransack(params[:q])
+  @formularios = @q.result(distinct: true)
+end
+
   # GET /formularios or /formularios.json
+<<<<<<< HEAD
   def index
     @formularios = Formulario.all
     if params[:q] && params[:q] != ""
       @formularios = Formulario.where("encabezado LIKE ?", "%" + params[:q] + "%")
     end
   end
+=======
+  #def index
+   # @formularios = Formulario.all
+  #end
+>>>>>>> abpro4a
 
   # GET /formularios/1 or /formularios/1.json
   def show
