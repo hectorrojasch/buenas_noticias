@@ -1,0 +1,37 @@
+
+
+
+        def self.search(search)
+    if search
+      busqueda = Formulario.find_by(name: search)
+      if busqueda
+        self.where(formulario_id: formulario)
+      else  
+        Formulario.all
+      end
+    else
+      Formulario.all
+      end   
+
+      <h4>Busqueda de Noticias</h4>
+  <%= form_tag (formularios_path, method: :get) do %>
+  <%= text_field_tag (:search, params[:search]) %>
+  <%= submit_tag ("Buscar") %>
+  <% end %>
+
+  <div id="formularios">
+  <% @formularios.each do |f| %>
+    <%= render f %>
+    <p>
+      <%= link_to "Show this formulario", f %>
+    </p>
+  <% end %>
+</div>
+
+ <%= form_tag "/formularios#index", method: "GET" do %>
+  
+  <%= text_field_tag :search, params[:search] %>
+  
+  <%= submit_tag "Buscar" %>
+<% end %>
+
